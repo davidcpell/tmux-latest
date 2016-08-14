@@ -1,5 +1,5 @@
 
-default['platform_specific_pkgs'] = 
+default['platform_specific_pkgs'] =
   if node['platform_family'] == 'rhel'
     ['libevent-devel', 'ncurses-devel']
   elsif node['platform_family'] == 'debian'

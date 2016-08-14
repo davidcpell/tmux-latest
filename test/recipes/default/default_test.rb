@@ -1,3 +1,3 @@
-describe file("/usr/local/bin/tmux") do 
+describe file('/usr/local/bin/tmux') do
   it { should exist }
 end

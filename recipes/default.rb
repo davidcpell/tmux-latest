@@ -1,4 +1,4 @@
-package ['automake', 'gcc']
+package %w(automake gcc)
 package node['platform_specific_pkgs']
 
 git node['tmux']['destination'] do
@@ -12,12 +12,12 @@ bash 'build tmux' do
 
   cwd node['tmux']['destination']
   code <<-EOH
-    sh autogen.sh    
+    sh autogen.sh
     ./configure && make
   EOH
 end
 
 bash 'copy tmux executable to /usr/local/bin' do
   not_if { File.exist?('/usr/local/bin/tmux') }
-  code 'cp /usr/local/tmux/tmux /usr/local/bin'  
+  code 'cp /usr/local/tmux/tmux /usr/local/bin'
 end
