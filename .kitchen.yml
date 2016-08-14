@@ -16,5 +16,6 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[tmux::default]
+      - recipe[tmux-latest::git]
+      - recipe[tmux-latest::default]
     attributes:
